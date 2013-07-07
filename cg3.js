@@ -15,7 +15,7 @@ function cg3() {
 		var i = 0;
 		function next() {
 			clearInterval(timer);
-			cg4();
+			lv3();
 		}
 		function frame() {
 			i += 2;

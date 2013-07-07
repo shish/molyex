@@ -36,7 +36,7 @@ function title() {
 		setTimeout(function() {
 			canvas.onclick = function() {
 				//cg1();
-				lv4();
+				lv5();
 			}
 		}, 500);
 	}

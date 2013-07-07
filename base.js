@@ -78,7 +78,7 @@ var active_ideas = [];
 function have_idea() {
 	var idea = idea_list[Math.floor(Math.random() * idea_list.length)]
 	active_ideas.push(
-		[idea, 50+Math.random()*500, 50+Math.random()*400, 350, 100]
+		[idea, -30 + Math.random()*500, 50+Math.random()*400, 350, 100]
 	);
 }
 function collect_idea(evt) {
