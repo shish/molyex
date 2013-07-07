@@ -66,15 +66,42 @@ var active_ideas = [];
 function have_idea() {
 	var idea = idea_list[Math.floor(Math.random() * idea_list.length)]
 	active_ideas.push(
-		[idea]
+		[idea, 50+Math.random()*500, 50+Math.random()*400, 200, 100]
 	);
 }
 function collect_idea(evt) {
-	active_ideas.pop();
-	lv_score++;
+	for(var i=0; i<active_ideas.length; ) {
+		var id = active_ideas[i];
+		var xy = canvas.relMouseCoords(evt);
+		if(xy.x > id[1] && xy.x < id[1]+id[3] && xy.y > id[2] && xy.y < id[2]+id[4]) {
+			active_ideas.splice(i, 1);
+			lv_score++;
+		}
+		else {
+			// if we removed the current element, then the next
+			// element to check has the same index that we're
+			// currently looking at
+			i++;
+		}
+	}
 }
 function draw_ideas() {
 	for(var i=0; i<active_ideas.length; i++) {
-		textBox(active_ideas[i][0], "", "");
+		var id = active_ideas[i];
+
+		context.beginPath()
+		context.rect(id[1], id[2], id[3], id[4]);
+		context.fillStyle = "#AAA"; // TODO: random
+		context.fill();
+		context.strokeWidth = 8;
+		context.strokeStyle = "black";
+		context.stroke();
+
+		context.fillStyle = "#444";
+		context.font = "10pt sans";
+		context.fillText(id[0].substr(0, 60), id[i] + 10, id[2] + 20);
+		context.fillText(id[0].substr(60, 120), id[i] + 10, id[2] + 40);
+		context.fillText(id[0].substr(120, 180), id[i] + 10, id[2] + 60);
+		context.fillText("(Click to write down!)", id[1] + 60, id[2] + 80);
 	}
 }

@@ -74,7 +74,7 @@ function lv1() {
 			"Let's flip some pancakes!",
 			"(A/D to move left/right)",
 			function() {
-				canvas.onclick = null;
+				canvas.onclick = collect_idea;
 				timer = setInterval(frame, 50);
 			}
 		);
@@ -100,7 +100,6 @@ function lv1() {
 			if(frameNum == 400) {
 				if(isHit()) {
 					pdx = -(Math.random() * 1 + 0.5);
-					canvas.onclick = collect_idea;
 				}
 				else {
 					gameOver();
