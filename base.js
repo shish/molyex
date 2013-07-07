@@ -78,7 +78,13 @@ var active_ideas = [];
 function have_idea() {
 	var idea = idea_list[Math.floor(Math.random() * idea_list.length)]
 	active_ideas.push(
-		[idea, -30 + Math.random()*500, 50+Math.random()*400, 350, 100]
+		[
+			idea, -30 + Math.random()*500, 50+Math.random()*400, 350, 100,
+			"rgb("+
+				Math.floor(100+Math.random()*100)+","+
+				Math.floor(100+Math.random()*100)+","+
+				Math.floor(100+Math.random()*100)+")"
+		]
 	);
 }
 function collect_idea(evt) {
@@ -104,7 +110,7 @@ function draw_ideas() {
 
 		context.beginPath()
 		context.rect(id[1], id[2], id[3], id[4]);
-		context.fillStyle = "#AAA"; // TODO: random color
+		context.fillStyle = id[5];
 		context.fill();
 		context.strokeWidth = 8;
 		context.strokeStyle = "black";
