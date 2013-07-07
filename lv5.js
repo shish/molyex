@@ -1,5 +1,6 @@
 function lv5() {
 	canvas.onclick = null;
+	lv_score = 0;
 	active_ideas = [];
 
 	var bg = new Image();
@@ -123,7 +124,7 @@ function lv5() {
 						draw_main();
 						textBox(
 							"You made it!",
-							"Your wife loves you!.",
+							"Your wife loves you!",
 							"You also wrote down " + lv_score + " awesome ideas!",
 							cg6
 						);

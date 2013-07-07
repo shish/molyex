@@ -1,5 +1,6 @@
 function lv4() {
 	canvas.onclick = null;
+	lv_score = 0;
 	active_ideas = [];
 
 	var bg = new Image();
