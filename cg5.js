@@ -1,4 +1,4 @@
-function cg2() {
+function cg5() {
 	canvas.onclick = null;
 	active_ideas = [];
 
@@ -22,18 +22,18 @@ function cg2() {
 			context.drawImage(mol, 200, 600-i);
 
 			textBox(
-				"Having experienced the joy of a magnificent pancake,",
-				"it looks like it's time for work.",
-				"Get to the car and start driving!",
+				"Well, that was a refreshing break. Now all that's",
+				"left to do is get into bed, kiss the wife, and",
+				"dream up some more brilliant game ideas.",
 				function() {
 					clearInterval(timer);
-					cg3();
+					cg6();
 				}
 			);
 		}
 		timer = setInterval(frame, 50);
 	}
 
-	bg.src = "data/cg2-bg.jpg";
+	bg.src = "data/cg5-bg.jpg";
 	mol.src = "data/cg1-mol.png";
 }

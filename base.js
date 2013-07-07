@@ -1,12 +1,23 @@
+/* rendering */
 var canvas = document.getElementById("c");
 var context = canvas.getContext("2d");
-var highscores = [
+
+/* high score management */
+var high_scores = [
 	["Test", 100],
 	["Test", 0]
 ];
 var score = 0;
 var lv_score = 0;
+function hs_prompt() {
+	name = prompt("You scored "+score+"! What is your name?");
+	high_scores.push([name, score]);
+	// TODO: save cookie
+	// TODO: load from cookie
+	title();
+}
 
+/* input management */
 var keys = {};
 window.onkeydown = function(evt) {keys[String.fromCharCode((evt||window.event).keyCode)] = true;}
 window.onkeyup = function(evt) {keys[String.fromCharCode((evt||window.event).keyCode)] = false;}
@@ -62,6 +73,7 @@ function textBox(l1, l2, l3, next) {
 	}
 }
 
+/* idea creation / removal */
 var active_ideas = [];
 function have_idea() {
 	var idea = idea_list[Math.floor(Math.random() * idea_list.length)]
@@ -75,6 +87,7 @@ function collect_idea(evt) {
 		var xy = canvas.relMouseCoords(evt);
 		if(xy.x > id[1] && xy.x < id[1]+id[3] && xy.y > id[2] && xy.y < id[2]+id[4]) {
 			active_ideas.splice(i, 1);
+			score++;
 			lv_score++;
 		}
 		else {

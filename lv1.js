@@ -54,7 +54,7 @@ function lv1() {
 				"You dropped the pancake.",
 				"An African child could have lived for a week with that.",
 				"You feel too bad to continue with your day.",
-				title
+				hs_prompt
 			);
 		}
 		else {
@@ -62,7 +62,7 @@ function lv1() {
 				"Looks like you can't handle being a genius and being a man",
 				"at the same time. Shame.",
 				"So much shame.",
-				title
+				hs_prompt
 			);
 		}
 	}
@@ -118,7 +118,6 @@ function lv1() {
 						"Not just an amazing pancake.",
 						"You also wrote down " + lv_score + " awesome ideas!"
 					);
-					score = score + lv_score;
 					setTimeout(function() {
 						canvas.onclick = cg2;
 					}, 500);

@@ -20,6 +20,13 @@ function title() {
 		context.font = "10pt sans";
 		context.fillText("High Scores", 130, 220);
 
+		// TODO: sort these
+		for(var i=0; i<high_scores.length; i++) {
+			var hs = high_scores[i];
+			context.fillText(hs[0], 80, 250 + i*20);
+			context.fillText(hs[1], 220, 250 + i*20);
+		}
+
 		context.font = "20pt sans";
 		context.fillText("Click to Experience", 120, 550);
 
