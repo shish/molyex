@@ -68,16 +68,22 @@ function lv1() {
 	}
 
 	function go() {
-		draw_main();
-		textBox(
-			"First job of the day, breakfast.",
-			"Let's flip some pancakes!",
-			"(A/D to move left/right)",
-			function() {
-				canvas.onclick = collect_idea;
-				timer = setInterval(frame, 50);
-			}
-		);
+		// this should be fine to go immediately, since it is
+		// called when onload() is triggered - but doing it
+		// immediately doesn't draw the images (text box is
+		// drawn fine though)
+		setTimeout(function() {
+			draw_main();
+			textBox(
+				"First job of the day, breakfast.",
+				"Let's flip some pancakes!",
+				"(A/D to move left/right)",
+				function() {
+					canvas.onclick = collect_idea;
+					timer = setInterval(frame, 50);
+				}
+			);
+		}, 100);
 
 		function frame() {
 			draw_main();

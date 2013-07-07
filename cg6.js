@@ -10,18 +10,21 @@ function cg6() {
 	bg.onload = goWhenReady();
 
 	function go() {
-		context.drawImage(bg, 0, 0);
 
 		function next() {
 			clearInterval(timer);
-			title();
+			hs_prompt();
 		}
-		textBox(
-			"Well done! You have completed a day in the life",
-			"of Peter Molyneux. If you enjoyed that, why not",
-			"become a visionary game designer yourself?",
-			next
-		);
+		function frame() {
+			context.drawImage(bg, 0, 0);
+			textBox(
+				"Well done! You have completed a day in the life",
+				"of Peter Molyneux. If you enjoyed that, why not",
+				"become a visionary game designer yourself?",
+				next
+			);
+		}
+		setTimeout(frame, 100);
 	}
 
 	bg.src = "data/cg6-bg.jpg";
