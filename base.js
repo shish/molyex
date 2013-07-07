@@ -78,7 +78,7 @@ var active_ideas = [];
 function have_idea() {
 	var idea = idea_list[Math.floor(Math.random() * idea_list.length)]
 	active_ideas.push(
-		[idea, 50+Math.random()*500, 50+Math.random()*400, 420, 100]
+		[idea, 50+Math.random()*500, 50+Math.random()*400, 350, 100]
 	);
 }
 function collect_idea(evt) {
@@ -104,7 +104,7 @@ function draw_ideas() {
 
 		context.beginPath()
 		context.rect(id[1], id[2], id[3], id[4]);
-		context.fillStyle = "#AAA"; // TODO: random
+		context.fillStyle = "#AAA"; // TODO: random color
 		context.fill();
 		context.strokeWidth = 8;
 		context.strokeStyle = "black";
@@ -112,9 +112,10 @@ function draw_ideas() {
 
 		context.fillStyle = "#444";
 		context.font = "10pt sans";
+		// TODO: better wrapping (wrap at idea creation time, to match width?)
 		context.fillText(id[0].substr(0, 60), id[1] + 10, id[2] + 20);
-		context.fillText(id[0].substr(60, 120), id[1] + 10, id[2] + 40);
-		context.fillText(id[0].substr(120, 180), id[1] + 10, id[2] + 60);
+		context.fillText(id[0].substr(60, 60), id[1] + 10, id[2] + 40);
+		context.fillText(id[0].substr(120, 60), id[1] + 10, id[2] + 60);
 		context.fillText("(Click to write down!)", id[1] + 60, id[2] + 80);
 	}
 }

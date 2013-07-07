@@ -103,7 +103,7 @@ function lv1() {
 					gameOver();
 				}
 			}
-			if(frameNum >= 200 && frameNum < 400 && frameNum % 20 == 0) {
+			if(frameNum >= 200 && frameNum < 400 && frameNum % 6 == 0) {
 				have_idea();
 			}
 			if(frameNum == 400) {
@@ -114,7 +114,7 @@ function lv1() {
 					gameOver();
 				}
 			}
-			if(frameNum >= 400 && frameNum < 600 && frameNum % 10 == 0) {
+			if(frameNum >= 400 && frameNum < 600 && frameNum % 3 == 0) {
 				have_idea();
 			}
 			if(frameNum == 600) {
@@ -125,11 +125,9 @@ function lv1() {
 					textBox(
 						"You made it!",
 						"Not just an amazing pancake.",
-						"You also wrote down " + lv_score + " awesome ideas!"
+						"You also wrote down " + lv_score + " awesome ideas!",
+						cg2
 					);
-					setTimeout(function() {
-						canvas.onclick = cg2;
-					}, 500);
 				}
 				else {
 					gameOver();
