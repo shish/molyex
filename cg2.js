@@ -13,6 +13,10 @@ function cg2() {
 
 	function go() {
 		var i = 0;
+		function next() {
+			clearInterval(timer);
+			cg3();
+		}
 		function frame() {
 			i += 2;
 			if(i >= 260) {
@@ -25,10 +29,7 @@ function cg2() {
 				"Having experienced the joy of a magnificent pancake,",
 				"it looks like it's time for work.",
 				"Get to the car and start driving!",
-				function() {
-					clearInterval(timer);
-					cg3();
-				}
+				next
 			);
 		}
 		timer = setInterval(frame, 50);

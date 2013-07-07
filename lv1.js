@@ -97,6 +97,9 @@ function lv1() {
 					gameOver();
 				}
 			}
+			if(frameNum >= 200 && frameNum < 400 && frameNum % 20 == 0) {
+				have_idea();
+			}
 			if(frameNum == 400) {
 				if(isHit()) {
 					pdx = -(Math.random() * 1 + 0.5);
@@ -105,7 +108,7 @@ function lv1() {
 					gameOver();
 				}
 			}
-			if(frameNum >= 200 && frameNum < 600 && frameNum % 10 == 0) {
+			if(frameNum >= 400 && frameNum < 600 && frameNum % 10 == 0) {
 				have_idea();
 			}
 			if(frameNum == 600) {

@@ -12,14 +12,15 @@ function cg6() {
 	function go() {
 		context.drawImage(bg, 0, 0);
 
+		function next() {
+			clearInterval(timer);
+			title();
+		}
 		textBox(
 			"Well done! You have completed a day in the life",
 			"of Peter Molyneux. If you enjoyed that, why not",
 			"become a visionary game designer yourself?",
-			function() {
-				clearInterval(timer);
-				title();
-			}
+			next
 		);
 	}
 

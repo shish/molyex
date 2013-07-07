@@ -13,6 +13,10 @@ function cg5() {
 
 	function go() {
 		var i = 0;
+		function next() {
+			clearInterval(timer);
+			cg6();
+		}
 		function frame() {
 			i += 2;
 			if(i >= 260) {
@@ -25,10 +29,7 @@ function cg5() {
 				"Well, that was a refreshing break. Now all that's",
 				"left to do is get into bed, kiss the wife, and",
 				"dream up some more brilliant game ideas.",
-				function() {
-					clearInterval(timer);
-					cg6();
-				}
+				next
 			);
 		}
 		timer = setInterval(frame, 50);

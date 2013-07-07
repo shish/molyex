@@ -13,6 +13,10 @@ function cg3() {
 
 	function go() {
 		var i = 0;
+		function next() {
+			clearInterval(timer);
+			cg4();
+		}
 		function frame() {
 			i += 2;
 			if(i >= 260) {
@@ -25,10 +29,7 @@ function cg3() {
 				"You got to work safely!",
 				"Time for a day of brilliance.",
 				"Need to get to your office!",
-				function() {
-					clearInterval(timer);
-					cg4();
-				}
+				next
 			);
 		}
 		timer = setInterval(frame, 50);
