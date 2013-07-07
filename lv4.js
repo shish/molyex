@@ -110,6 +110,7 @@ function lv4() {
 						);
 					}
 					else {
+						x = 0;
 						px = 700;
 					}
 				}
