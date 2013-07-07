@@ -20,11 +20,11 @@ function title() {
 		context.font = "10pt sans";
 		context.fillText("High Scores", 130, 220);
 
-		// TODO: sort these
+		high_scores.sort(function(a, b) {return b.score - a.score});
 		for(var i=0; i<high_scores.length; i++) {
 			var hs = high_scores[i];
-			context.fillText(hs[0], 80, 250 + i*20);
-			context.fillText(hs[1], 220, 250 + i*20);
+			context.fillText(hs.name, 80, 250 + i*20);
+			context.fillText(hs.score, 220, 250 + i*20);
 		}
 
 		context.font = "20pt sans";

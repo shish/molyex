@@ -4,14 +4,15 @@ var context = canvas.getContext("2d");
 
 /* high score management */
 var high_scores = [
-	["Test", 100],
-	["Test", 0]
+	//{name:"Test", score:100},
+	//{name:"Test", score:0},
+	//{name:"Test", score:50},
 ];
 var score = 0;
 var lv_score = 0;
 function hs_prompt() {
-	name = prompt("You scored "+score+"! What is your name?");
-	high_scores.push([name, score]);
+	var name = prompt("You scored "+score+"! What is your name?");
+	high_scores.push({"name":name, "score":score});
 	// TODO: save cookie
 	// TODO: load from cookie
 	title();
