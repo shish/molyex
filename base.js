@@ -58,7 +58,7 @@ function textBox(l1, l2, l3, next) {
 	context.fillText(l1, 210, 120);
 	context.fillText(l2, 210, 140);
 	context.fillText(l3, 210, 160);
-	context.fillText("(Click to continue)", 450, 180);
+	context.fillText("(Click this box to continue)", 450, 180);
 
 	if(next != _nextevent) {
 		canvas.onclick = null;
